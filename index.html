@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Bus Driving</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: skyblue; }
+    #bus { position: absolute; bottom: 10px; left: 50%; width: 100px; }
+  </style>
+</head>
+<body>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Bus_icon.svg/1024px-Bus_icon.svg.png" id="bus">
+  <script>
+    const bus = document.getElementById('bus');
+    let pos = window.innerWidth / 2;
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') pos -= 10;
+      if (e.key === 'ArrowRight') pos += 10;
+      bus.style.left = pos + 'px';
+    });
+  </script>
+</body>
+</html>
